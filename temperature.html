@@ -1,0 +1,88 @@
+<html>
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+       
+        <div class="container2">
+            <div class="title">Temperature converter</div>
+            <div class="header">
+                <p>
+                    Having a hard time converting? You come to the right place. Try out our tool here!
+                </p>
+            </div>
+            <div class="celsius" id="celsiusdegree">
+                <p class="title1" id="titlecelsius">Celsius(&#176;C):</p>
+                <input id="Celsiusinput" type="number">
+                <br>
+                <div class="buttons">
+                  <button onclick="Converse()">Converse</button>
+                  <button onclick="Reset()">Reset</button>
+                  <button id="Reverse" onclick="Reversee()">Reverse</button>
+                </div>
+                
+    
+            </div>
+            <div class="Fahrenheit" id="fahrenheitdegree">
+                <p class="title2" id="titlefahrenheit">Fahrenheit(&#176;F):</p>
+                <input id="Fahrenheitinput" type="number" disabled>
+                
+    
+            </div>
+            <div class="Formula" id="calculationway">
+                <p class="title3" id="titlecalculate">Cara kalkulasi:</p>
+                <input id="calculation" disabled>
+                
+    
+            </div>
+            <div class="closeheader">
+              <h1 id="closing">Celcius to Fahrenheit</h1>
+            </div>
+            <div class="image">
+              <img src="img/celsius.png" alt="" class="avatar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function Reset() {
+          document.getElementById("Celsiusinput").value = "";
+          document.getElementById("Fahrenheitinput").value = "";
+          document.getElementById("calculation").value = "";
+        }
+  
+        function Converse() {
+          const angkaIn = document.getElementById("Celsiusinput").value;
+          if (angkaIn == "") {
+            alert("Insert Number!");
+          } else {
+            if (document.getElementById("titlecelsius").innerHTML == "Celsius:") {
+              var angkaOut = (angkaIn * 9)/5 + 32;
+              document.getElementById("Fahrenheitinput").value = angkaOut;
+              document.getElementById("calculation").value = `Fahrenheit = (${angkaIn})*9 / 5 + 32 = ${angkaOut}${String.fromCharCode(176)}F`;
+            } else {
+              var angkaOut = ((angkaIn - 32)*5)/9;
+              document.getElementById("Fahrenheitinput").value = angkaOut;
+              document.getElementById("calculation").value = `Celsius = (${angkaIn} - 32) * 5 / 9 = ${angkaOut}${String.fromCharCode(176)}C`;
+            }
+          }
+        }
+  
+        function Reversee() {
+          document.getElementById("closing").innerHTML = "Fahrenheit to Celsius";
+          document.getElementById("titlecelsius").innerHTML = "Fahrenheit:";
+          document.getElementById("titlefahrenheit").innerHTML = "Celsius:";
+          document.getElementById("Reverse").setAttribute("onclick", "Reversee2()");
+        }
+  
+        function Reversee2() {
+          document.getElementById("closing").innerHTML = "Celsius to Fahrenheit";
+          document.getElementById("titlecelsius").innerHTML = "Celsius:";
+          document.getElementById("titlefahrenheit").innerHTML = "Fahrenheit:";
+          document.getElementById("Reverse").setAttribute("onclick", "Reversee()");
+        }
+      </script>
+    
+</body>
+</html>

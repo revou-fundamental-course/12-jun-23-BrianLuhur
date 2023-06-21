@@ -1,0 +1,38 @@
+.container{
+    text-align: left;
+    width: 500px;
+    height: 800px;
+    margin: 0 auto;
+    background-color: rgba(253, 248, 248, 0.938);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+.container2{
+    justify-content: center;
+}
+
+input{
+    width: 500px;
+    height: 30px;
+    justify-content: center;
+}
+.calculation{
+    width: 400px;
+    height:100px;
+}
+.title1, .title2, .title3 {
+    text-align: center;
+}
+.title{
+    text-align: center;
+    
+    
+}
+.buttons{
+    text-align: center;
+}
+.closeheader{
+    text-align: center;
+}
