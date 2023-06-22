@@ -13,7 +13,7 @@
                 </p>
             </div>
             <div class="celsius" id="celsiusdegree">
-                <p class="title1" id="titlecelsius">Celsius(&#176;C):</p>
+                <p class="title1" id="titlecelsius">Celsius(°C):</p>
                 <input id="Celsiusinput" type="number">
                 <br>
                 <div class="buttons">
@@ -25,7 +25,7 @@
     
             </div>
             <div class="Fahrenheit" id="fahrenheitdegree">
-                <p class="title2" id="titlefahrenheit">Fahrenheit(&#176;F):</p>
+                <p class="title2" id="titlefahrenheit">Fahrenheit(°F):</p>
                 <input id="Fahrenheitinput" type="number" disabled>
                 
     
@@ -57,7 +57,7 @@
           if (angkaIn == "") {
             alert("Insert Number!");
           } else {
-            if (document.getElementById("titlecelsius").innerHTML == "Celsius:") {
+            if (document.getElementById("titlecelsius").innerHTML == "Celsius(°C):") {
               var angkaOut = (angkaIn * 9)/5 + 32;
               document.getElementById("Fahrenheitinput").value = angkaOut;
               document.getElementById("calculation").value = `Fahrenheit = (${angkaIn})*9 / 5 + 32 = ${angkaOut}${String.fromCharCode(176)}F`;
@@ -71,15 +71,15 @@
   
         function Reversee() {
           document.getElementById("closing").innerHTML = "Fahrenheit to Celsius";
-          document.getElementById("titlecelsius").innerHTML = "Fahrenheit:";
-          document.getElementById("titlefahrenheit").innerHTML = "Celsius:";
+          document.getElementById("titlecelsius").innerHTML = "Fahrenheit(°F):";
+          document.getElementById("titlefahrenheit").innerHTML = "Celsius(°C):";
           document.getElementById("Reverse").setAttribute("onclick", "Reversee2()");
         }
   
         function Reversee2() {
           document.getElementById("closing").innerHTML = "Celsius to Fahrenheit";
-          document.getElementById("titlecelsius").innerHTML = "Celsius:";
-          document.getElementById("titlefahrenheit").innerHTML = "Fahrenheit:";
+          document.getElementById("titlecelsius").innerHTML = "Celsius(°C):";
+          document.getElementById("titlefahrenheit").innerHTML = "Fahrenheit(°F):";
           document.getElementById("Reverse").setAttribute("onclick", "Reversee()");
         }
       </script>
